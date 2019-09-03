@@ -1,9 +1,7 @@
 @extends('Plantilla')
 
-//Titulo
 @section('titulo', 'CRUD Usando Laravel')
 
-//Encabezado
 @section('titulo-principal', 'Marcas')
 @section('descripcion-titulo-principal', 'Este es un ejemplo para mostrar todo el contenido de una tabla')
 @section('boton-principal')
@@ -14,7 +12,6 @@
 @endsection
 @section('texto-boton-principal', 'Mostrar Todos')
 
-//Columna 1
 @section('titulo-columna1', 'Mostrar Datos')
 @section('contenido-columna1')
     <ul>
@@ -29,8 +26,6 @@
 @section('boton-columna1', '')
 @section('enlace-boton-columna1', '')
 
-
-//Columna 2
 @section('titulo-columna2', 'Detalle de Marca')
 @section('contenido-columna2')
     <table class = "table table-light">
@@ -38,6 +33,7 @@
         <tr>
             <th>Nombre</th>
             <th>Codigo</th>
+            <th>Nombre Proveedor</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
@@ -46,6 +42,7 @@
             <tr>
                 <td>{{$Marca->Nombre}}</td>
                 <td>{{$Marca->Codigo}}</td>
+                <td>{{$Marca->proveedor->Nombre}}</td>
                 <td><a href="{{route('MarcasEditar', ['Marca' => $Marca])}}">Editar</a></td>
                 <td>
                     <form action="{{route('MarcasEliminar', ['Marca' => $Marca])}}" method="POST">
@@ -66,5 +63,4 @@
     {{route('Marcas')}}
 @endsection
 
-//Pie
 @section('pie', 'Mostrando todos los datos de una tabla')

@@ -57,17 +57,21 @@
         {{ csrf_field() }}
 
         <label for="Nombre">Nombre :</label>
-        <input type="text" name="Nombre" placeholder="Nombre" maxlength="50" id="Nombre"
-               value="{{old('Nombre', $Marca->Nombre) }}" required>
+        <input type="text" name="Nombre" placeholder="Nombre"  maxlength="50" id="Nombre" value="{{old('Nombre', $Marca->Nombre) }}" required>
         @if ($errors->has('Nombre'))
             <p class="text-danger">{{ $errors->first('Nombre') }}</p>
         @endif
         <br>
         <label for="Codigo">Codigo :</label>
-        <input type="text" name="Codigo" placeholder="Codigo" maxlength="5" id="Codigo"
-               value="{{old('Codigo', $Marca->Codigo)}}" required>
+        <input type="text" name="Codigo" placeholder="Codigo" maxlength="5" id="Codigo" value="{{old('Codigo', $Marca->Codigo)}}" required>
         @if ($errors->has('Codigo'))
             <p class="text-danger">{{ $errors->first('Codigo') }}</p>
+        @endif
+        <br>
+        <label for="ProveedorId">ProveedorId :</label>
+        <input type="text" name="ProveedorId" placeholder="ProveedorId" maxlength="5" value="{{old('ProveedorId', $Marca->Proveedor->ProveedorId)}}" id="ProveedorId" required>
+        @if ($errors->has('ProveedorId'))
+            <p class="text-danger">{{ $errors->first('ProveedorId') }}</p>
         @endif
         <button type="submit">Actualizar Marca</button>
     </form>

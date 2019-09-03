@@ -1,9 +1,7 @@
 @extends('Plantilla')
 
-//Titulo
 @section('titulo', 'CRUD Usando Laravel')
 
-//Encabezado
 @section('titulo-principal', 'Proveedores')
 @section('descripcion-titulo-principal', 'Este es un ejemplo para mostrar todo el contenido de una tabla')
 @section('boton-principal')
@@ -14,7 +12,6 @@
 @endsection
 @section('texto-boton-principal', 'Mostrar Todos')
 
-//Columna 1
 @section('titulo-columna1', 'Mostrar Datos')
 @section('contenido-columna1')
     <ul xmlns:width="http://www.w3.org/1999/xhtml">
@@ -29,7 +26,6 @@
 @section('boton-columna1', '')
 @section('enlace-boton-columna1', '')
 
-//Columna 2
 @section('titulo-columna2', 'Tabla Proveedores')
 @section('contenido-columna2')
     <table class = "table table-hover table-responsive">
@@ -54,5 +50,4 @@
 @section('boton-columna2', '')
 @section('enlace-boton-columna2', '')
 
-//Pie
 @section('pie', 'Mostrando todos los datos de una tabla')

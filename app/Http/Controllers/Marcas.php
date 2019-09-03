@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Marca;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class Marcas extends Controller
 {
@@ -29,16 +30,18 @@ class Marcas extends Controller
 
   function Crear(){
       $Datos = request()->validate([
-          'Nombre' => 'required|max:50',
+          'Nombre' => 'required|unique:Marcas,Nombre|max:50',
           'Codigo' => 'required|unique:Marcas,Codigo|max:5',
-          'ProveedorId' => 'required',
+          'ProveedorId' => 'required|exists:proveedores,proveedorid',
       ],[
           'Nombre.required' => 'Campo Nombre es obligatorio!',
           'ProveedorId.required' => 'Campo ProveedorId es obligatorio!',
           'Nombre.max' => 'Campo Nombre solo debe tener 50 caracteres!',
           'Codigo.required' => 'Campo Codigo es obligatorio!',
           'Codigo.unique' => 'Codigo ya fue utilizado!',
-          'Codigo.max' => 'Campo Codigo solo debe tener 5 caracteres!'
+          'Nombre.unique' => 'Nombre ya fue utilizado!',
+          'Codigo.max' => 'Campo Codigo solo debe tener 5 caracteres!',
+          'ProveedorId.exists' => 'No existe ese id para el proveedor',
       ]); //->all() trae todos los datos de request
 
       $Marca = Marca::create(
@@ -61,16 +64,19 @@ class Marcas extends Controller
           'Nombre' => 'required|max:50',
           'Codigo' => ['required',
                   Rule::unique('Marcas')->ignore($Marca->MarcaId, 'MarcaId'),
-                  'max:5']
+                  'max:5'],
+          'ProveedorId' => 'required|exists:proveedores,proveedorid',
       ],[
           'Nombre.required' => 'Campo Nombre es obligatorio!',
+          'ProveedorId.required' => 'Campo ProveedorId es obligatorio!',
           'Nombre.max' => 'Campo Nombre solo debe tener 50 caracteres!',
           'Codigo.required' => 'Campo Codigo es obligatorio!',
           'Codigo.unique' => 'Codigo ya fue utilizado!',
           'Codigo.max' => 'Campo Codigo solo debe tener 5 caracteres!',
           'RTN.required' => 'Campo RTN es obligatorio!',
           'RTN.unique' => 'RTN ya existe para otra empresa!',
-          'RTN.size' => 'RTN tiene que tener 14 numeros!'
+          'RTN.size' => 'RTN tiene que tener 14 numeros!',
+          'ProveedorId.exists' => 'No existe ese id para el proveedor',
       ]);
 
       $Marca->update($Datos);

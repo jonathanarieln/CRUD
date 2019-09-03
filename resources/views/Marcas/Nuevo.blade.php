@@ -1,10 +1,8 @@
 @extends('Plantilla')
 
-//Titulo
 @section('titulo', 'Nuevo Marca')
 
-//Encabezado
-@section('titulo-principal', 'Nuevo Marca')
+@section('titulo-principal', 'Nueva Marca')
 @section('descripcion-titulo-principal', 'Este es un ejemplo para mostrar como se crean nuevos registro en una tabla')
 @section('boton-principal')
     @parent
@@ -14,7 +12,6 @@
 @endsection
 @section('texto-boton-principal', 'Nuevo Marca')
 
-//Columna 1
 @section('titulo-columna1', 'Descripcion')
 @section('contenido-columna1')
     <ul>
@@ -47,7 +44,6 @@
 @section('boton-columna1', '')
 @section('enlace-boton-columna1', '')
 
-//Columna 2
 @section('titulo-columna2', 'Nuevo Marca')
 @section('contenido-columna2')
 
@@ -88,5 +84,4 @@
 @section('boton-columna2', '')
 @section('enlace-boton-columna2', '')
 
-//Pie
 @section('pie', 'Nuevo Marca')

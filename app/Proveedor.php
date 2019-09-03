@@ -10,4 +10,8 @@ class Proveedor extends Model
     protected $table = 'Proveedores';
     protected $fillable = ['Nombre', 'Codigo', 'RTN'];
 
+    public function marcas()
+    {
+      return $this->hasMany(Marca::class,'ProveedorId','ProveedorId');
+    }
 }

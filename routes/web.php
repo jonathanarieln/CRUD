@@ -11,23 +11,23 @@
 |
 */
 
-Route::get('/', 'Proveedores@index')->name('inicio');
-Route::get('/Proveedores', 'Proveedores@Proveedores')->name('Proveedores');
+    Route::get('/', 'Proveedores@index')->name('inicio');
+    Route::get('/Proveedores', 'Proveedores@Proveedores')->name('Proveedores');
 
-Route::get('/Proveedores/{Proveedor}', 'Proveedores@Detalle')->where('Proveedor', '\d+')
-    ->name('ProveedoresDetalle'); // ruta para enlazar el modelo con la peticion url
+    Route::get('/Proveedores/{Proveedor}', 'Proveedores@Detalle')->where('Proveedor', '\d+')
+        ->name('ProveedoresDetalle'); // ruta para enlazar el modelo con la peticion url
 
-Route::get('/Proveedores2/{ProveedorId}', 'Proveedores@Detalle2')->where('ProveedorId', '\d+')
-    ->name('ProveedoresDetalle2');
+    Route::get('/Proveedores2/{ProveedorId}', 'Proveedores@Detalle2')->where('ProveedorId', '\d+')
+        ->name('ProveedoresDetalle2');
 
-Route::get('/Proveedores/Nuevo', 'Proveedores@Nuevo')->name('ProveedoresNuevo');
-Route::post('/Proveedores/Crear', 'Proveedores@Crear')->name('ProveedoresCrear');
-Route::get('/Proveedores/{Proveedor}/Editar', 'Proveedores@Editar')->where('Proveedor', '\d+')
-    ->name('ProveedoresEditar');
-Route::put('/Proveedores/{Proveedor}', 'Proveedores@Actualizar')->where('Proveedor', '\d+')
-    ->name('ProveedoresActualizar');
-Route::delete('/Proveedores/{Proveedor}', 'Proveedores@Borrar')->where('Proveedor', '\d+')
-    ->name('ProveedoresEliminar');
+    Route::get('/Proveedores/Nuevo', 'Proveedores@Nuevo')->name('ProveedoresNuevo');
+    Route::post('/Proveedores/Crear', 'Proveedores@Crear')->name('ProveedoresCrear');
+    Route::get('/Proveedores/{Proveedor}/Editar', 'Proveedores@Editar')->where('Proveedor', '\d+')
+        ->name('ProveedoresEditar');
+    Route::put('/Proveedores/{Proveedor}', 'Proveedores@Actualizar')->where('Proveedor', '\d+')
+        ->name('ProveedoresActualizar');
+    Route::delete('/Proveedores/{Proveedor}', 'Proveedores@Borrar')->where('Proveedor', '\d+')
+        ->name('ProveedoresEliminar');
 
 
 

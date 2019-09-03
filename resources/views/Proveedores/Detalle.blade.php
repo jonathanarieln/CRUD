@@ -1,9 +1,7 @@
 @extends('Plantilla')
 
-//Titulo
 @section('titulo', 'CRUD Usando Laravel')
 
-//Encabezado
 @section('titulo-principal', 'Proveedores')
 @section('descripcion-titulo-principal', 'Este es un ejemplo para mostrar todo el contenido de una tabla')
 @section('boton-principal')
@@ -14,7 +12,6 @@
 @endsection
 @section('texto-boton-principal', 'Mostrar Todos')
 
-//Columna 1
 @section('titulo-columna1', 'Mostrar Datos')
 @section('contenido-columna1')
     <ul>
@@ -30,7 +27,6 @@
 @section('enlace-boton-columna1', '')
 
 
-//Columna 2
 @section('titulo-columna2', 'Detalle de Proveedor')
 @section('contenido-columna2')
     <table class = "table table-light">
@@ -59,6 +55,36 @@
             </tr>
         </tbody>
     </table>
+
+
+
+
+
+    @php
+      $marcas = App\Proveedor::findOrFail($Proveedor->ProveedorId)->marcas;
+    @endphp
+
+
+
+    @if (count($marcas)>=1)
+    <h2>Marcas</h2>
+    <table class = "table table-light">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+        </tr>
+        </thead>
+        <tbody>
+          @foreach ($marcas as $marca)
+            <tr>
+                <td>{{$marca->MarcaId}}</td>
+                <td>{{$marca->Nombre}}</td>
+            </tr>
+          @endforeach
+        </tbody>
+    </table>
+    @endif
 @endsection
 @section('boton-columna2')
     @parent
@@ -68,5 +94,4 @@
     {{route('Proveedores')}}
 @endsection
 
-//Pie
 @section('pie', 'Mostrando todos los datos de una tabla')
