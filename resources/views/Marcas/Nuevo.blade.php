@@ -10,7 +10,7 @@
 @section('enlace-boton-principal')
     {{route('MarcasNuevo')}}
 @endsection
-@section('texto-boton-principal', 'Nuevo Marca')
+@section('texto-boton-principal', 'Nueva Marca')
 
 @section('titulo-columna1', 'Descripcion')
 @section('contenido-columna1')
@@ -44,7 +44,7 @@
 @section('boton-columna1', '')
 @section('enlace-boton-columna1', '')
 
-@section('titulo-columna2', 'Nuevo Marca')
+@section('titulo-columna2', 'Nueva Marca')
 @section('contenido-columna2')
 
     @if($errors->any())
@@ -84,4 +84,4 @@
 @section('boton-columna2', '')
 @section('enlace-boton-columna2', '')
 
-@section('pie', 'Nuevo Marca')
+@section('pie', 'Nueva Marca')

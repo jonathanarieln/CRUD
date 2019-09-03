@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Ejemplo de CRUD en Laravel">
-    <meta name="author" content="Cons Sorto">
+    <meta name="author" content="Cons Sorto y Modificado por Jonathan Nuñez">
     <link rel="icon" href="favicon.ico">
 
     <title>@yield('titulo')</title>

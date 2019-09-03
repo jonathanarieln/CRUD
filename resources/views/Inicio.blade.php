@@ -25,6 +25,10 @@
 @section('contenido-columna2')
       <p>El CRUD desarrollado en este ejemplo, se realizara en la tabla <em>Proveedores</em>
        La cual tiene cinco campos ProveedorId, Nombre, Codigo, RTN, created_at y updated_at</p>
+
+       <p>Y para fines didacticos uzaremos la tabla <em>Marcas</em>
+        La cual tiene seis campos MarcaId, ProveedorId, Nombre, Codigo, created_at y updated_at;
+        cabe señalar que el campo ProveedorId sera llave foranea de la tabla Proveedores</p>
 @endsection
 
 @section('boton-columna2')

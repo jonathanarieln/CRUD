@@ -15,11 +15,7 @@
 @section('titulo-columna1', 'Mostrar Datos')
 @section('contenido-columna1')
     <ul>
-        <li>Para mostrar todos los registros de la tabla Marcas vamos a usar un view que utilice la plantilla blade,
-            una funcion del controlador para manejar los datos y un ruta para poder accesar a la pagina.</li>
-        <li>Cada campo de una consulta que origina un objeto eloquent se trata como un atributo.</li>
-        <li>Cuando un objeto de eloquent es impreso en pantalla (tratado como string), se imprime una representación
-            en JSON de cada usuario.</li>
+        <li>Podemos mostrar los datos del proveedor de la siguiente manera $Marca->proveedor->Nombre.</li>
     </ul>
 @endsection
 

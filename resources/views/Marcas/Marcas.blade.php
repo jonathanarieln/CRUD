@@ -15,11 +15,12 @@
 @section('titulo-columna1', 'Mostrar Datos')
 @section('contenido-columna1')
     <ul xmlns:width="http://www.w3.org/1999/xhtml">
-        <li>Para mostrar todos los registros de la tabla Marcas vamos a usar un view que utilice la plantilla blade,
-            una funcion del controlador para manejar los datos y un ruta para poder accesar a la pagina.</li>
-        <li>Cada campo de una consulta que origina un objeto eloquent se trata como un atributo.</li>
-        <li>Cuando un objeto de eloquent es impreso en pantalla (tratado como string), se imprime una representación
-            en JSON de cada usuario.</li>
+        <li>Para poder mostrar los datos del proveedor al cual hace referencia la llave foranea ubicada en la tabla marcas es necesario que
+          modifiquemos ambos modelos en el de Proveedores indicaremos que puede tener muchas marcas creando en el modelo una funcion llamada
+          marcas con la sentencia HasMany de la siguiente manera:
+          return $this->hasMany<br>
+            ('Marca::class','ProveedorId','ProveedorId');</li>
+          <li>En lugar de usar 'Marca::class' tambien podriamos utilizar 'App\Marca'</li>
     </ul>
 @endsection
 
@@ -50,4 +51,4 @@
 @section('boton-columna2', '')
 @section('enlace-boton-columna2', '')
 
-@section('pie', 'Mostrando todos los datos de una tabla')
+@section('pie', 'Mostrando todos los datos de la tabla Marcas')

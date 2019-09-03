@@ -50,4 +50,4 @@
 @section('boton-columna2', '')
 @section('enlace-boton-columna2', '')
 
-@section('pie', 'Mostrando todos los datos de una tabla')
+@section('pie', 'Mostrando todos los datos de la tabla Proveedores')

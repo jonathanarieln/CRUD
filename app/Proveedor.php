@@ -12,6 +12,6 @@ class Proveedor extends Model
 
     public function marcas()
     {
-      return $this->hasMany(Marca::class,'ProveedorId','ProveedorId');
+      return $this->hasMany('App\Marca','ProveedorId','ProveedorId');
     }
 }
