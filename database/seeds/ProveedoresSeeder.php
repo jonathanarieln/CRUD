@@ -13,6 +13,6 @@ class ProveedoresSeeder extends Seeder
     public function run()
     {
         DB::delete('DELETE FROM Proveedores');
-        factory(\App\Proveedor::class, 50)->create();
+        factory(\App\Proveedor::class, 10)->create();
     }
 }

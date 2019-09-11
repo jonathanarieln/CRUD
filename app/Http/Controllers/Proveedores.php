@@ -82,8 +82,21 @@ class Proveedores extends Controller
     }
 
     function Borrar(Proveedor $Proveedor){
+
+       try {
         $Proveedor->delete();
 
         return redirect()->route('Proveedores');
+
+        } catch (\Illuminate\Database\QueryException $e) {
+            var_dump($e->errorInfo);
+            var_dump($Proveedor->ProveedorId);
+
+            return  view('errors.tieneMarcas');
+
+        }
+
+
+
     }
 }
