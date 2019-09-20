@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Marca;
+use App\Proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +12,9 @@ class Marcas extends Controller
 {
   function Marcas(){
       $Marcas = Marca::all();
-      return view('Marcas.Marcas', ['Marcas' => $Marcas]);
+      $Proveedores = Proveedor::all();
+      return view('Marcas.Marcas', ['Marcas' => $Marcas,
+                                    'Proveedores' => $Proveedores]);
   }
 
   function Detalle2($MarcaId){
@@ -25,7 +28,8 @@ class Marcas extends Controller
   }
 
   function Nuevo(){
-      return view('Marcas.Nuevo');
+      $Proveedores = Proveedor::all();
+      return view('Marcas.Nuevo',['Proveedores' => $Proveedores]);
   }
 
   function Crear(){

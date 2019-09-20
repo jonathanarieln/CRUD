@@ -73,7 +73,11 @@
         @endif
         <br>
         <label for="ProveedorId">ProveedorId :</label>
-        <input type="text" name="ProveedorId" placeholder="ProveedorId" maxlength="5" id="ProveedorId" value="{{old('ProveedorId')}}" required>
+        <select type="text" name="ProveedorId" placeholder="ProveedorId" maxlength="5" id="ProveedorId" value="{{old('ProveedorId')}}" required>
+          @foreach($Proveedores as $Proveedor)
+                                <option value="{{$Proveedor->ProveedorId}}">{{$Proveedor->Nombre}}</option>
+          @endforeach
+        </select>
         @if ($errors->has('ProveedorId'))
             <p class="text-danger">{{ $errors->first('ProveedorId') }}</p>
         @endif

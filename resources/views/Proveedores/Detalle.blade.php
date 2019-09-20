@@ -55,16 +55,9 @@
             </tr>
         </tbody>
     </table>
-
-
-
-
-
     @php
       $marcas = App\Proveedor::findOrFail($Proveedor->ProveedorId)->marcas;
     @endphp
-
-
 
     @if (count($marcas)>=1)
     <h2>Marcas</h2>
